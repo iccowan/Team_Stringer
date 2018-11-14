@@ -36,7 +36,7 @@ class HomeController extends Controller
         if($r != true) {
             return redirect()->back()->with('error', 'You must complete the ReCaptcha to continue.');
         }
-        dd(success);
+        
         //Continue with sending the ticket
         $name = $request->name;
         $email = $request->email;
