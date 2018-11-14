@@ -4,7 +4,6 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="author" content="Ian Cowan">
-        <meta name="propeller" content="a246789773311649a709422984e8ade3">
 
         <title>@yield('title') | Team Stringer</title>
 

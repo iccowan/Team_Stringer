@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Config;
 use Illuminate\Http\Request;
 use Mail;
 use Carbon\Carbon;
@@ -35,7 +36,8 @@ class HomeController extends Controller
         if($r != true) {
             return redirect()->back()->with('error', 'You must complete the ReCaptcha to continue.');
         }
-
+        dd(success);
+        //Continue with sending the ticket
         $name = $request->name;
         $email = $request->email;
         $reason = $request->reason;
