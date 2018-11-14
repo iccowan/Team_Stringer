@@ -1,0 +1,18 @@
+
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Exo');
+
+// Variables
+@import 'variables';
+
+// Bulma
+@import "node_modules/bulma/bulma.sass";
+
+html body {
+  font-family: 'Exo', sans-serif;
+  background-color: white
+}
+
+.navbar-item {
+  text-decoration: none
+}

@@ -1,0 +1,16 @@
+/node_modules
+/public_html/hot
+/public_html/storage
+/storage/*.key
+/vendor
+/.idea
+/.vscode
+/.vagrant
+Homestead.json
+Homestead.yaml
+npm-debug.log
+yarn-error.log
+.env
+.phpunit.result.cache
+/D:\\XAMPP\\htdocs\\Team_Stringer\\storage\\logs
+/public_html/D:\\XAMPP\\htdocs\\Team_Stringer\\storage\\logs
