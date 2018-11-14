@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Mail;
 use Carbon\Carbon;
+use GuzzleHttp\Client;
 
 class HomeController extends Controller
 {
@@ -22,6 +23,19 @@ class HomeController extends Controller
     }
 
     public function submitSupportTicket(Request $request) {
+        //Google ReCaptcha Verification
+        $client = new Client;
+        $response = $client->request('POST', 'https://www.google.com/recaptcha/api/siteverify', [
+            'form_params' => [
+                'secret' => Config::get('google.captcha_secret'),
+                'response' => $request->input('g-recaptcha-response'),
+            ]
+        ]);
+        $r = json_decode($response->getBody())->success;
+        if($r != true) {
+            return redirect()->back()->with('error', 'You must complete the ReCaptcha to continue.');
+        }
+
         $name = $request->name;
         $email = $request->email;
         $reason = $request->reason;

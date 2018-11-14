@@ -152,6 +152,7 @@
                             {!! Form::textarea('msg', null, ['class' => 'textarea']) !!}
                         </div>
                     </div>
+                    <div class="g-recaptcha" data-sitekey="6Lf2uHUUAAAAAO8HMK2l0firYKpFY7zmJwUHPqQr"></div>
                     <button class="button is-primary" type="submit">Send</button>
                 {!! Form::close() !!}
             </div>
