@@ -22,7 +22,7 @@ class StaffController extends Controller
 
     public function showTeamDetails($id) {
         $coach = User::find($id);
-        $players = User::where('role', 'PLAYER')->orWhere('role','STRING')->where('team_token', $coach->team_token)->get()->sortBy(function($p) {
+        $players = User::where('team_token', $coach->team_token)->where('role', 'PLAYER')->orWhere('role','STRING')->get()->sortBy(function($p) {
             $lname = substr($p->name, strpos($p->name, " ") + 1);
             return $lname;
         });
